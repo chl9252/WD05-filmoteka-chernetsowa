@@ -12,12 +12,10 @@ $resultInfo = "";
 $resultError = "";
 $errors = array();
 
-
-
 // проверка формы и сохранение
 
 
-if (array_key_exists('updateFilm', $_POST)) {
+if (array_key_exists('newFilm', $_POST)) {
 	
 	// ошибки
 	if ( $_POST['title'] == '') {
@@ -30,24 +28,17 @@ if (array_key_exists('updateFilm', $_POST)) {
 		$errors[] = "Необходимо ввести год фильма";
 	}
 
-
-
 	if ( empty($errors)) {
 
-		$result = film_update($link,$_POST['title'],$_POST['genre'],$_POST['year'], $_GET['id'],$_POST['description']);
+		$result = film_new($link,$_POST['title'],$_POST['genre'],$_POST['year'],$_POST['description']);
 			if ($result) {
-				$resultSuccess = "Фильм успешно обновлен!";
+				$resultSuccess = "Фильм успешно добавлен!";
 			} else {
-				$resultError = "Фильм НЕ обновлен! Произошла ошибка";
+				$resultError = "Фильм НЕ добавлен! Произошла ошибка";
 			}	
-
 	}
 }
-
-	$film = film_get($link,$_GET['id']);
-	
-
 	include('views/head.tpl');
 	include('views/notifications.tpl');
-	include('views/edit.tpl');
+	include('views/film-new.tpl');
 	include('views/footer.tpl');
