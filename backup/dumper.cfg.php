@@ -5,7 +5,7 @@ $this->SET = array(
 'tables' => '',
 'comp_method' => '0',
 'comp_level' => '7',
-'last_db_restore' => '',
+'last_db_restore' => 'mysql',
 'tables_exclude' => '0',
 )
 ?>
