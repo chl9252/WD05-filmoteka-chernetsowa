@@ -1,7 +1,9 @@
 <?php 
 
+
 require('config.php');
 require('database.php');
+require('functions/login-function.php');
 
 $link = db_connect();
 
@@ -11,6 +13,7 @@ $resultError = "";
 $errors = array();
 
 require('models/films.php');
+
 
 
 if ( @$_GET['action'] == 'delete') {

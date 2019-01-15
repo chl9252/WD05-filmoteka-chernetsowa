@@ -11,6 +11,7 @@ $resultError = "";
 $errors = array();
 
 require('models/films.php');
+require('functions/login-function.php');
 
 
 if ( @$_GET['action'] == 'delete') {

@@ -10,10 +10,12 @@
 					<div class="col">
 						<div class="card__header">
 							<h4 class="title-4"><?=$value['title']?></h4>
+							<?php	if(isAdmin()) {?>
 							<div class="buttons">
 								<a href="edit.php?id=<?=$value['id']?>" class="button button--editsmall">Редактировать</a>
 								<a href="?action=delete&id=<?=$value['id']?>" class="button button--removesmall">Удалить</a>
 							</div>	
+							<?php } ?>
 						</div>
 						<div class="badge"><?=$value['genre']?></div>
 						<div class="badge"><?=$value['year']?></div>
