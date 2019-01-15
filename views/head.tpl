@@ -22,8 +22,16 @@
 		<nav class="nav header-admin mb-50">
 			<a class="admin-nav__link" href="index.php">Все фильмы</a>
 			<a class="admin-nav__link" href="new.php">Добавить новый</a>
+			<a class="admin-nav__link" href="request.php">Указать информацию</a>
 		</nav>
-		
 
 		
-	
+		<div class="mb-50">
+			<?php if(isset($_COOKIE['user-name'])){ ?>
+			Привет, <?=$_COOKIE['user-name']?> !
+			<?php } ?>
+			<?php if(isset($_COOKIE['user-city'])){ ?>
+			 Из <?=$_COOKIE['user-city']?>!
+			<?php } ?>
+		</div>
+
