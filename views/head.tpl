@@ -42,5 +42,11 @@
 			<?php if(isset($_COOKIE['user-city'])){ ?>
 			 Из <?=$_COOKIE['user-city']?>!
 			<?php } ?>
+
+			<?php	if (isAdmin()) {?>
+			Привет, <?=$_SESSION['user']?> !
+			<?php } ?>
 		</div>
+
+
 
