@@ -21,9 +21,32 @@
 	<div class="container user-content">
 		<nav class="nav header-admin mb-50">
 			<a class="admin-nav__link" href="index.php">Все фильмы</a>
-			<a class="admin-nav__link" href="new.php">Добавить новый</a>
-		</nav>
+			<?php	if (isAdmin()) {?>
+				<a class="admin-nav__link" href="new.php">Добавить новый</a>
+				<?php } ?>
 		
+			<a class="admin-nav__link" href="request.php">Указать информацию</a>
+			<?php	if (!isAdmin()) {?>
+			<a class="admin-nav__link" href="login.php">Вход для админа</a>
+			<?php } ?>
+			<?php	if (isAdmin()) {?>
+					<a class="admin-nav__link" href="logout.php">Выход для админа</a>
+			<?php } ?>
+		</nav>
 
 		
-	
+		<div class="mb-50">
+			<?php if(isset($_COOKIE['user-name'])){ ?>
+			Привет, <?=$_COOKIE['user-name']?> !
+			<?php } ?>
+			<?php if(isset($_COOKIE['user-city'])){ ?>
+			 Из <?=$_COOKIE['user-city']?>!
+			<?php } ?>
+
+			<?php	if (isAdmin()) {?>
+			Привет, <?=$_SESSION['user']?> !
+			<?php } ?>
+		</div>
+
+
+
